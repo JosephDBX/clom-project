@@ -28,10 +28,10 @@
   },
   "emulators": {
     "functions": {
-      "port": null
+      "port": 5000
     },
     "firestore": {
-      "port": 8080
+      "port": 6000
     },
     "ui": {
       "enabled": true

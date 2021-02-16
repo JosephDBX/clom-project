@@ -18,8 +18,8 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 if (window.location.hostname === 'localhost') {
-    db.useEmulator('localhost', 8080);
-    firebase.functions().useEmulator('localhost', 5001);
+    db.useEmulator('localhost', 6000);
+    firebase.functions().useEmulator('localhost', 5000);
 }
 
 db.enablePersistence().catch((err) => {
@@ -27,10 +27,14 @@ db.enablePersistence().catch((err) => {
         // Multiple tabs open, persistence can only be enabled
         // in one tab at a a time.
         // ...
+        console.error('failed-precondition');
     } else if (err.code == 'unimplemented') {
         // The current browser does not support all of the
         // features required to enable persistence
         // ...
+        console.error('unimplemented');
+    } else {
+        console.error('other');
     }
 });
 
