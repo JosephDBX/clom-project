@@ -4,26 +4,33 @@
     v-if="authenticated"
     :value="drawer"
     @input="setDrawer"
+    color="primary darken-3"
+    dark
   >
-    <v-list-item>
-      <v-list-item-content>
-        <v-list-item-title class="title text--secondary">
-          Laboratorio Moncada
-        </v-list-item-title>
+    <v-list>
+      <v-list-item class="justify-center">
+        <v-list-item-avatar color="secondary" size="120" class="ma-0 my-2">
+          <v-img :src="authenticated.photoURL"></v-img>
+        </v-list-item-avatar>
+      </v-list-item>
 
-        <v-list-item-subtitle>
-          Exámenes clínicos de laboratorio
-        </v-list-item-subtitle>
-      </v-list-item-content>
-    </v-list-item>
+      <v-list-item link class="text-center" no-action>
+        <v-list-item-content>
+          <v-list-item-title class="title">{{
+            authenticated.displayName
+          }}</v-list-item-title>
+
+          <v-list-item-subtitle>{{ authenticated.email }}</v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+    </v-list>
 
     <v-divider></v-divider>
 
     <v-list>
       <v-list-item
-        color="primary"
         v-for="(item, index) in items"
-        :key="index+item.name"
+        :key="index + item.name"
         :to="{ name: item.uri }"
         exact
       >
@@ -35,19 +42,19 @@
       </v-list-item>
 
       <v-list-group
-        color="primary"
-        :prepend-icon="role.icon"
+        color="lighten-5"
         :value="i == 0"
         v-for="(role, i) in authenticated.roles"
         :key="i"
-        mandatory
       >
         <template v-slot:activator>
+          <v-list-item-icon>
+            <v-icon v-text="role.icon"></v-icon>
+          </v-list-item-icon>
           <v-list-item-title v-text="role.name"></v-list-item-title>
         </template>
 
         <v-list-item
-          color="primary"
           v-for="(access, j) in role.access"
           :key="j"
           :to="access.uri"

@@ -45,9 +45,11 @@
             color="primary"
             v-bind="attrs"
             v-on="on"
-            class="text-lowercase"
+            class="text-none"
           >
-            <span class="d-none d-sm-block">{{ authenticated.email }}</span>
+            <span class="d-none d-sm-block">{{
+              authenticated.displayName
+            }}</span>
             <v-icon class="d-flex d-sm-none">mdi-account-circle</v-icon>
             <v-icon>mdi-chevron-down</v-icon>
           </v-btn>
@@ -58,7 +60,7 @@
             <v-list-item-title>Gestiona tu cuenta</v-list-item-title>
           </v-list-item>
 
-          <v-list-item link @click="logout">
+          <v-list-item link @click="navLogout">
             <v-list-item-title>Cerrar sesión</v-list-item-title>
           </v-list-item>
         </v-list>
@@ -75,13 +77,26 @@ export default {
 
   data: () => ({
     credentials: {
+      displayName: "JosephDBX",
       email: "st.joseph.dbx@gmail.com",
+      photoURL: "https://picsum.photos/300/300",
+      state: true,
     },
   }),
   methods: {
     ...mapActions(["toggleDrawer", "login", "logout"]),
     navLogin() {
       this.login(this.credentials);
+      this.$router.push("/user-panel");
+    },
+    navLogout() {
+      this.logout();
+      if (this.$route.params.pathMatch != "Home")
+        this.$router.push(
+          { name: "Home" },
+          () => {},
+          () => {}
+        );
     },
   },
   computed: { ...mapGetters(["authenticated"]) },

@@ -1,11 +1,19 @@
 const AUTH_LOGIN = "AUTH_LOGIN";
 const AUTH_LOGOUT = "AUTH_LOGOUT";
 
+const account = {
+    displayName: "JosephDBX",
+    email: "st.joseph.dbx@gmail.com",
+    photoURL: "https://picsum.photos/300/300",
+    state: true,
+}
+
 const roles = [
     {
-        name: "Paciente",
+        name: "Usuario",
         icon: "mdi-badge-account",
         access: [
+            { title: "Panel de Usuario", icon: "mdi-view-dashboard", uri: "/user-panel" },
         ],
     },
     {
@@ -21,13 +29,13 @@ const roles = [
 export const auth = {
     state: () => ({
         authenticated: {
-            email: "test@gmail.com",
+            ...account,
             roles
         },
     }),
     mutations: {
         [AUTH_LOGIN](state, credentials) {
-            state.authenticated = { ...credentials };
+            state.authenticated = { ...credentials, roles };
         },
         [AUTH_LOGOUT](state) {
             state.authenticated = null;
