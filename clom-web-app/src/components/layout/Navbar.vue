@@ -1,11 +1,8 @@
 <template>
   <v-app-bar app dense flat>
-    <v-app-bar-nav-icon
-      v-if="authenticated"
-      @click="toggleDrawer"
-    ></v-app-bar-nav-icon>
+    <v-app-bar-nav-icon v-if="authenticated" @click="toggleDrawer" />
 
-    <v-app-bar-title class="text--disabled">
+    <v-app-bar-title class="grey--text text--darken-1">
       Laboratorio
       <span class="font-weight-bold">Moncada</span>
     </v-app-bar-title>
@@ -13,28 +10,16 @@
     <v-spacer></v-spacer>
 
     <div class="d-none d-sm-block" v-if="!authenticated">
-      <v-btn color="secondary" plain @click="navLogin">Iniciar sesión</v-btn>
-      <v-btn color="accent" plain>Crear una cuenta</v-btn>
+      <v-btn color="primary" @click="navLogin">
+        <v-icon>mdi-google-plus</v-icon>
+        <span class="ml-2">Iniciar sesión</span>
+      </v-btn>
     </div>
 
     <div class="d-flex d-sm-none" v-if="!authenticated">
-      <v-menu offset-y>
-        <template v-slot:activator="{ on, attrs }">
-          <v-btn icon v-bind="attrs" v-on="on">
-            <v-icon>mdi-dots-vertical</v-icon>
-          </v-btn>
-        </template>
-
-        <v-list>
-          <v-list-item link @click="navLogin">
-            <v-list-item-title>Iniciar sesión</v-list-item-title>
-          </v-list-item>
-
-          <v-list-item link>
-            <v-list-item-title>Crear una cuenta</v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-menu>
+      <v-btn color="primary" fab small @click="navLogin">
+        <v-icon>mdi-google-plus</v-icon>
+      </v-btn>
     </div>
 
     <div v-if="authenticated">
@@ -99,6 +84,6 @@ export default {
         );
     },
   },
-  computed: { ...mapGetters(["authenticated"]) },
+  computed: { ...mapGetters(["authenticated", "drawer"]) },
 };
 </script>

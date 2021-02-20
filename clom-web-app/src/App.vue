@@ -1,23 +1,10 @@
 <template>
-  <v-app>
-    <sidenav></sidenav>
-
-    <navbar></navbar>
-
-    <v-main>
-      <v-container class="">
-        <router-view></router-view>
-      </v-container>
-    </v-main>
-  </v-app>
+  <app-layout />
 </template>
 
 <script>
-import Navbar from "./components/layout/Navbar.vue";
-import Sidenav from "./components/layout/Sidenav.vue";
-
+import AppLayout from "./layouts/AppLayout.vue";
 export default {
-  name: "App",
-  components: { Sidenav, Navbar },
+  components: { AppLayout },
 };
 </script>
