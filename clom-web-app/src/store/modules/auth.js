@@ -2,6 +2,7 @@ const AUTH_LOGIN = "AUTH_LOGIN";
 const AUTH_LOGOUT = "AUTH_LOGOUT";
 
 const account = {
+    uid: "",
     displayName: "JosephDBX",
     email: "st.joseph.dbx@gmail.com",
     photoURL: "https://picsum.photos/300/300",
@@ -28,24 +29,23 @@ const roles = [
 
 export const auth = {
     state: () => ({
-        authenticated: {
-            ...account,
-            roles
-        },
+        account,
+        roles
     }),
     mutations: {
-        [AUTH_LOGIN](state, credentials) {
-            state.authenticated = { ...credentials, roles };
+        [AUTH_LOGIN](state, account) {
+            state.account = { ...account };
+            state.roles = roles;
         },
         [AUTH_LOGOUT](state) {
-            state.authenticated = null;
+            state.account = null;
+            this.roles = [];
         }
     },
     actions: {
         login({ commit }, credentials) {
             commit(AUTH_LOGIN, {
-                ...credentials,
-                roles
+                ...credentials
             });
         },
         logout({ commit }) {
@@ -53,8 +53,11 @@ export const auth = {
         }
     },
     getters: {
-        authenticated({ authenticated }) {
-            return authenticated;
+        account({ account }) {
+            return account;
+        },
+        roles({ roles }) {
+            return roles;
         },
     }
 };

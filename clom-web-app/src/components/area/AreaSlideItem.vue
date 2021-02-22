@@ -1,5 +1,5 @@
 <template>
-  <v-card :loading="loading" class="ma-1" width="200">
+  <v-card :loading="loading" class="ma-2" width="200">
     <template slot="progress">
       <v-progress-linear
         color="accent"
@@ -8,49 +8,33 @@
       ></v-progress-linear>
     </template>
 
-    <v-img
-      height="150"
-      :lazy-src="member.photoURL"
-      :src="member.photoURL"
-      transition="fade-transition"
-    ></v-img>
+    <div class="secondary">
+      <v-card-title class="body-1 grey--text text--lighten-4">
+        {{ area.name }}
+      </v-card-title>
 
-    <v-card-title class="body-1">
-      {{ member.name }} {{ member.surname }}
-    </v-card-title>
-
-    <v-card-text>
-      <div class="grey--text body-2 text-justify">
-        {{ member.bio }}
-      </div>
-    </v-card-text>
+      <v-card-subtitle class="grey--text text--lighten-4">
+        Pruebas: 23
+      </v-card-subtitle>
+    </div>
 
     <v-divider class="mx-4"></v-divider>
 
-    <v-card-text class="text-center">
-      <div class="body-1">Teléfono: {{ member.contact.phone }}</div>
-
-      <v-btn color="secondary" plain @click="location">Localización</v-btn>
+    <v-card-text>
+      <div class="grey--text body-2 text-justify">
+        {{ area.description }}
+      </div>
     </v-card-text>
   </v-card>
 </template>
 
 <script>
-import Member from "../../models/Member";
-
 export default {
-  props: {
-    member: Member,
-  },
+  props: ["area"],
   data: () => ({
-    loading: true,
-    selection: 1,
+    loading: false,
   }),
 
-  methods: {
-    location() {
-      this.loading = false;
-    },
-  },
+  methods: {},
 };
 </script>

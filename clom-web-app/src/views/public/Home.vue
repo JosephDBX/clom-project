@@ -32,14 +32,9 @@
           dolorem nihil ex! Minus totam consequatur autem mollitia ea atque eos
           eaque nam! Quos dolor voluptate perferendis esse natus quia inventore
           obcaecati, tempora ex explicabo adipisci recusandae eligendi molestiae
-          vel, cum cumque sapiente magni consequuntur alias dolorem fugit. Aut,
-          sunt facere deleniti, eos provident, voluptatem maxime cumque
-          accusantium sint eum voluptatum. Rem aliquid laboriosam, odio commodi
-          veniam dolorum magnam neque deleniti? Iusto et, unde minima libero,
-          magnam numquam quam inventore voluptatem quae, corrupti nam. Quis eius
-          excepturi eum fugit delectus architecto illum.
-        </p>
-      </v-col>
+          vel, cum cumque sapiente magni consequuntur alias dolorem fugit.
+        </p></v-col
+      >
     </v-row>
 
     <v-row class="mx-2 mt-5 d-block d-md-none">
@@ -53,7 +48,7 @@
     </v-row>
 
     <v-row class="my-5 my-md-16 mx-md-2 mx-lg-4">
-      <v-col xs="12" md="5" xl="3" class="d-none d-md-block">
+      <v-col xs="12" md="5" lg="" xl="3" class="d-none d-md-block">
         <p class="text-h6 text-sm-h5 text-center text-sm-left grey--text">
           Áreas en las que nos especializamos
         </p>
@@ -64,12 +59,7 @@
           dolorem nihil ex! Minus totam consequatur autem mollitia ea atque eos
           eaque nam! Quos dolor voluptate perferendis esse natus quia inventore
           obcaecati, tempora ex explicabo adipisci recusandae eligendi molestiae
-          vel, cum cumque sapiente magni consequuntur alias dolorem fugit. Aut,
-          sunt facere deleniti, eos provident, voluptatem maxime cumque
-          accusantium sint eum voluptatum. Rem aliquid laboriosam, odio commodi
-          veniam dolorum magnam neque deleniti? Iusto et, unde minima libero,
-          magnam numquam quam inventore voluptatem quae, corrupti nam. Quis eius
-          excepturi eum fugit delectus architecto illum.
+          vel, cum cumque sapiente magni consequuntur alias dolorem fugit.
         </p>
       </v-col>
 

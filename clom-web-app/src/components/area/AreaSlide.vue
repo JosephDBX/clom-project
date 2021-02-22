@@ -2,8 +2,8 @@
   <v-slide-group multiple show-arrows>
     <span class="mx-auto d-block d-md-none"></span>
 
-    <v-slide-item v-for="(member, index) in members" :key="index">
-      <area-slide-item :member="member" />
+    <v-slide-item v-for="(area, index) in areas" :key="index">
+      <area-slide-item :area="area" />
     </v-slide-item>
 
     <span class="mx-auto"></span>
@@ -16,51 +16,41 @@ import AreaSlideItem from "./AreaSlideItem.vue";
 export default {
   components: { AreaSlideItem },
   data: () => ({
-    members: [
+    areas: [
       {
-        email: "test@mail.com",
-        photoURL: "https://picsum.photos/300/300",
-        name: "Fulanito",
-        surname: "Pérez",
-        bio:
+        id: "",
+        name: "Area de exámenes",
+        description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta turpis sit amet ex fermentum, vitae pretium arcu dapibus. Vivamus lectus neque, interdum id enim ut, laoreet dignissim mauris. I200",
-        contact: {
-          phone: "8877-6655",
-          geopoint: {
-            latitude: 123.45,
-            longitude: 678.91,
-          },
-        },
+        state: true,
       },
       {
-        email: "test@mail.com",
-        photoURL: "https://picsum.photos/300/300",
-        name: "Fulanito",
-        surname: "Pérez",
-        bio:
+        id: "",
+        name: "Area de exámenes",
+        description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta turpis sit amet ex fermentum, vitae pretium arcu dapibus. Vivamus lectus neque, interdum id enim ut, laoreet dignissim mauris. I200",
-        contact: {
-          phone: "8877-6655",
-          geopoint: {
-            latitude: 123.45,
-            longitude: 678.91,
-          },
-        },
+        state: true,
       },
       {
-        email: "test@mail.com",
-        photoURL: "https://picsum.photos/300/300",
-        name: "Fulanito",
-        surname: "Pérez",
-        bio:
+        id: "",
+        name: "Area de exámenes",
+        description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta turpis sit amet ex fermentum, vitae pretium arcu dapibus. Vivamus lectus neque, interdum id enim ut, laoreet dignissim mauris. I200",
-        contact: {
-          phone: "8877-6655",
-          geopoint: {
-            latitude: 123.45,
-            longitude: 678.91,
-          },
-        },
+        state: true,
+      },
+      {
+        id: "",
+        name: "Area de exámenes",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta turpis sit amet ex fermentum, vitae pretium arcu dapibus. Vivamus lectus neque, interdum id enim ut, laoreet dignissim mauris. I200",
+        state: true,
+      },
+      {
+        id: "",
+        name: "Area de exámenes",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta turpis sit amet ex fermentum, vitae pretium arcu dapibus. Vivamus lectus neque, interdum id enim ut, laoreet dignissim mauris. I200",
+        state: true,
       },
     ],
   }),

@@ -1,5 +1,5 @@
 <template>
-  <v-card :loading="loading" class="ma-1" width="200">
+  <v-card :loading="loading" class="ma-2" width="200">
     <template slot="progress">
       <v-progress-linear
         color="accent"
@@ -36,15 +36,10 @@
 </template>
 
 <script>
-import Member from "../../models/Member";
-
 export default {
-  props: {
-    member: Member,
-  },
+  props: ["member"],
   data: () => ({
-    loading: true,
-    selection: 1,
+    loading: false,
   }),
 
   methods: {

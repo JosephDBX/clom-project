@@ -1,6 +1,6 @@
 <template>
   <v-app-bar app dense flat>
-    <v-app-bar-nav-icon v-if="authenticated" @click="toggleDrawer" />
+    <v-app-bar-nav-icon v-if="account" @click="toggleDrawer" />
 
     <v-app-bar-title class="grey--text text--darken-1">
       Laboratorio
@@ -9,20 +9,20 @@
 
     <v-spacer></v-spacer>
 
-    <div class="d-none d-sm-block" v-if="!authenticated">
+    <div class="d-none d-sm-block" v-if="!account">
       <v-btn color="primary" @click="navLogin">
         <v-icon>mdi-google-plus</v-icon>
         <span class="ml-2">Iniciar sesión</span>
       </v-btn>
     </div>
 
-    <div class="d-flex d-sm-none" v-if="!authenticated">
+    <div class="d-flex d-sm-none" v-if="!account">
       <v-btn color="primary" fab small @click="navLogin">
         <v-icon>mdi-google-plus</v-icon>
       </v-btn>
     </div>
 
-    <div v-if="authenticated">
+    <div v-if="account">
       <v-menu offset-y>
         <template v-slot:activator="{ on, attrs }">
           <v-btn
@@ -32,9 +32,7 @@
             v-on="on"
             class="text-none"
           >
-            <span class="d-none d-sm-block">{{
-              authenticated.displayName
-            }}</span>
+            <span class="d-none d-sm-block">{{ account.displayName }}</span>
             <v-icon class="d-flex d-sm-none">mdi-account-circle</v-icon>
             <v-icon>mdi-chevron-down</v-icon>
           </v-btn>
@@ -62,6 +60,7 @@ export default {
 
   data: () => ({
     credentials: {
+      uid: "qwert",
       displayName: "JosephDBX",
       email: "st.joseph.dbx@gmail.com",
       photoURL: "https://picsum.photos/300/300",
@@ -84,6 +83,6 @@ export default {
         );
     },
   },
-  computed: { ...mapGetters(["authenticated", "drawer"]) },
+  computed: { ...mapGetters(["account", "drawer"]) },
 };
 </script>

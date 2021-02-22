@@ -1,7 +1,7 @@
 <template>
   <v-navigation-drawer
     app
-    v-if="authenticated"
+    v-if="account"
     :value="drawer"
     @input="setDrawer"
     color="primary"
@@ -9,18 +9,22 @@
   >
     <v-list>
       <v-list-item class="justify-center">
-        <v-list-item-avatar color="primary lighten-1" size="120" class="ma-0 my-2">
-          <v-img :src="authenticated.photoURL"></v-img>
+        <v-list-item-avatar
+          color="primary lighten-1"
+          size="120"
+          class="ma-0 my-2"
+        >
+          <v-img :src="account.photoURL"></v-img>
         </v-list-item-avatar>
       </v-list-item>
 
       <v-list-item link class="text-center" no-action>
         <v-list-item-content>
           <v-list-item-title class="title">{{
-            authenticated.displayName
+            account.displayName
           }}</v-list-item-title>
 
-          <v-list-item-subtitle>{{ authenticated.email }}</v-list-item-subtitle>
+          <v-list-item-subtitle>{{ account.email }}</v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
     </v-list>
@@ -44,7 +48,7 @@
       <v-list-group
         color="lighten-5"
         :value="i == 0"
-        v-for="(role, i) in authenticated.roles"
+        v-for="(role, i) in roles"
         :key="i"
       >
         <template v-slot:activator>
@@ -80,6 +84,6 @@ export default {
     items: [{ name: "Inicio", icon: "mdi-home", uri: "Home" }],
   }),
   methods: { ...mapActions(["setDrawer"]) },
-  computed: { ...mapGetters(["authenticated", "drawer"]) },
+  computed: { ...mapGetters(["account", "roles", "drawer"]) },
 };
 </script>
