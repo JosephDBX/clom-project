@@ -1,12 +1,20 @@
 <template>
-  <v-slide-group multiple show-arrows>
+  <v-slide-group show-arrows v-model="model" center-active>
     <span class="mx-auto d-block d-md-none"></span>
 
-    <v-slide-item v-for="(member, index) in members" :key="index">
-      <member-slide-item :member="member" />
+    <v-slide-item
+      v-for="(member, index) in members"
+      :key="index"
+      v-slot="{ active, toggle }"
+    >
+      <member-slide-item :member="member" :active="active" :toggle="toggle" />
     </v-slide-item>
 
-    <span class="mx-auto"></span>
+    <v-slide-item>
+      <v-btn class="mx-2 my-16" plain>Ver más...</v-btn>
+    </v-slide-item>
+
+    <span class="mx-auto align-self-start"></span>
   </v-slide-group>
 </template>
 
@@ -15,12 +23,12 @@ import MemberSlideItem from "./MemberSlideItem.vue";
 export default {
   components: { MemberSlideItem },
   data: () => ({
+    model: null,
     members: [
       {
         email: "test@mail.com",
         photoURL: "https://picsum.photos/300/300",
-        name: "Fulanito",
-        surname: "Pérez",
+        account: { displayName: "Dr. Fulanito Mario Pérez López" },
         bio:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta turpis sit amet ex fermentum, vitae pretium arcu dapibus. Vivamus lectus neque, interdum id enim ut, laoreet dignissim mauris. I200",
         contact: {
@@ -34,8 +42,7 @@ export default {
       {
         email: "test@mail.com",
         photoURL: "https://picsum.photos/300/300",
-        name: "Fulanito",
-        surname: "Pérez",
+        account: { displayName: "Dr. Fulanito Mario Pérez López" },
         bio:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta turpis sit amet ex fermentum, vitae pretium arcu dapibus. Vivamus lectus neque, interdum id enim ut, laoreet dignissim mauris. I200",
         contact: {
@@ -49,8 +56,7 @@ export default {
       {
         email: "test@mail.com",
         photoURL: "https://picsum.photos/300/300",
-        name: "Fulanito",
-        surname: "Pérez",
+        account: { displayName: "Dr. Fulanito Mario Pérez López" },
         bio:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta turpis sit amet ex fermentum, vitae pretium arcu dapibus. Vivamus lectus neque, interdum id enim ut, laoreet dignissim mauris. I200",
         contact: {
@@ -64,8 +70,7 @@ export default {
       {
         email: "test@mail.com",
         photoURL: "https://picsum.photos/300/300",
-        name: "Fulanito",
-        surname: "Pérez",
+        account: { displayName: "Dr. Fulanito Mario Pérez López" },
         bio:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta turpis sit amet ex fermentum, vitae pretium arcu dapibus. Vivamus lectus neque, interdum id enim ut, laoreet dignissim mauris. I200",
         contact: {
@@ -79,8 +84,7 @@ export default {
       {
         email: "test@mail.com",
         photoURL: "https://picsum.photos/300/300",
-        name: "Fulanito",
-        surname: "Pérez",
+        account: { displayName: "Dr. Fulanito Mario Pérez López" },
         bio:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta turpis sit amet ex fermentum, vitae pretium arcu dapibus. Vivamus lectus neque, interdum id enim ut, laoreet dignissim mauris. I200",
         contact: {

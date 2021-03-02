@@ -17,10 +17,10 @@ firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
 
-if (window.location.hostname === 'localhost') {
+/* if (window.location.hostname === 'localhost') {
     db.useEmulator('localhost', 7000);
     firebase.functions().useEmulator('localhost', 5001);
-}
+} */
 
 db.enablePersistence().catch((err) => {
     if (err.code == 'failed-precondition') {
