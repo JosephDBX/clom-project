@@ -6,27 +6,27 @@
       </v-col>
     </v-row>
 
-    <v-row class="mx-2 mt-5 d-block d-md-none">
+    <v-row class="mx-2 mt-6 d-block d-md-none">
       <v-col cols="12">
-        <p class="text-h6 text-sm-h5 text-center text-sm-left grey--text">
+        <div class="text-h6 text-sm-h5 text-center text-sm-left">
           Nuestros colaboradores
-        </p>
+        </div>
 
         <v-divider></v-divider>
       </v-col>
     </v-row>
 
-    <v-row class="my-5 my-md-16 mx-md-2 mx-lg-4">
+    <v-row class="my-6 my-md-16 mx-md-2 mx-lg-4">
       <v-col xs="12" md="7" xl="9">
         <member-slide />
       </v-col>
 
       <v-col xs="12" md="5" xl="3" class="d-none d-md-block">
-        <p class="text-h6 text-sm-h5 text-center text-sm-left grey--text">
+        <div class="text-h6 text-sm-h5 text-center text-sm-left my-4">
           Nuestros colaboradores
-        </p>
+        </div>
 
-        <p class="grey--text text-justify">
+        <p class="text-justify">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio
           eum iste optio repudiandae architecto, quod reiciendis, rerum rem
           dolorem nihil ex! Minus totam consequatur autem mollitia ea atque eos
@@ -37,23 +37,23 @@
       >
     </v-row>
 
-    <v-row class="mx-2 mt-5 d-block d-md-none">
+    <v-row class="mx-2 mt-6 d-block d-md-none">
       <v-col cols="12">
-        <p class="text-h6 text-sm-h5 text-center text-sm-left grey--text">
+        <div class="text-h6 text-sm-h5 text-center text-sm-left">
           Áreas en las que nos especializamos
-        </p>
+        </div>
 
         <v-divider></v-divider>
       </v-col>
     </v-row>
 
-    <v-row class="my-5 my-md-16 mx-md-2 mx-lg-4">
+    <v-row class="my-6 my-md-16 mx-md-2 mx-lg-4">
       <v-col xs="12" md="5" lg="" xl="3" class="d-none d-md-block">
-        <p class="text-h6 text-sm-h5 text-center text-sm-left grey--text">
+        <div class="text-h6 text-sm-h5 text-center text-sm-left my-4">
           Áreas en las que nos especializamos
-        </p>
+        </div>
 
-        <p class="grey--text text-justify">
+        <p class="text-justify">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio
           eum iste optio repudiandae architecto, quod reiciendis, rerum rem
           dolorem nihil ex! Minus totam consequatur autem mollitia ea atque eos
